@@ -1,14 +1,8 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import { NextRequest, NextResponse } from "next/server";
 import { openai, DEFAULT_MODEL, DEFAULT_TEMPERATURE } from "@/lib/openai";
 import { buildUserPrompt, buildCouncilResult } from "@/core/council";
 import type { CouncilResult, DecisionInput } from "@/core/types";
-
-function loadSystemPrompt(): string {
-  const promptPath = join(process.cwd(), "src/core/council-prompt.md");
-  return readFileSync(promptPath, "utf-8");
-}
+import { COUNCIL_SYSTEM_PROMPT } from "../../../../core/protocols/council/council.prompt";
 
 export async function POST(req: NextRequest) {
   try {
@@ -21,7 +15,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const systemPrompt = loadSystemPrompt();
+    const systemPrompt = COUNCIL_SYSTEM_PROMPT;
     const input: DecisionInput = {
       ...body,
       question: body.question.trim(),

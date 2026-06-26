@@ -16,6 +16,7 @@ const dictionaries = {
   en: {
     nav: {
       newDecision: "New Decision",
+      protocols: "Protocols",
       language: "Language",
     },
     home: {
@@ -132,6 +133,7 @@ const dictionaries = {
   es: {
     nav: {
       newDecision: "Nueva decisión",
+      protocols: "Protocols",
       language: "Idioma",
     },
     home: {

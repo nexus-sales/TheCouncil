@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ADVISORS } from "@/core/council";
+import { ProtocolBadge } from "@/components/protocols/ProtocolBadge";
 import { useLocale } from "@/lib/i18n";
 
 export function HomeContent() {
@@ -13,6 +14,9 @@ export function HomeContent() {
         <div>
           <div className="mb-5 inline-flex rounded-md border border-sky-400/25 bg-sky-500/10 px-3 py-1 text-sm text-sky-200">
             {t.home.badge}
+          </div>
+          <div className="mb-4">
+            <ProtocolBadge protocolId="council" compact />
           </div>
           <h1 className="max-w-4xl text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
             {t.home.title}

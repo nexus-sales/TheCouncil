@@ -57,6 +57,12 @@ function ShellContent({ children }: AppShellProps) {
             </span>
           </Link>
           <div className="flex shrink-0 items-center gap-2">
+            <Link
+              href="/protocols"
+              className="hidden h-8 items-center justify-center rounded-lg px-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground sm:inline-flex"
+            >
+              {t.nav.protocols}
+            </Link>
             <LanguageToggle />
             <Link
               href="/new"
